@@ -1,62 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
-        <title>Unscrambler</title>
-        <style>
-            body {
-                background-color: #252525;
-                background-image: url("bg.jpg");
-                background-size: 100% 100%;
-            }
 
-            .button {
-                background-color: #4caf50; /* Green */
-                border: none;
-                color: white;
-                padding: 15px 32px;
-                text-align: center;
-                text-decoration: none;
-                display: inline-block;
-                font-size: 50px;
-                margin: 10px;
-                border-radius: 7px;
-                user-select: none;
-            }
-            .button:hover{
-                cursor: pointer;
-            }
-            .canvas {
-                background: rgba(255, 255, 255, 0.5);
-                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-                backdrop-filter: blur(13px);
-                -webkit-backdrop-filter: blur(13px);
-                border-radius: 10px;
-                border: 1px solid rgba(255, 255, 255, 0.18);
-            }
-        </style>
-    </head>
-    <body>
-        <div style="max-width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-            <div>
+<head>
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+    <title>Unscrambler</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-                <canvas
-                id="scrambler"
-                width="1403"
-                height="2048"
-                class="canvas"
-                ></canvas>
+        body {
+            background-color: #252525;
+            font-family: 'Roboto', sans-serif;
+            user-select: none;
+        }
+
+        .button {
+            background-color: #252525;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 50px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 20px 20px 40px #181818,
+                -20px -20px 40px #323232;
+            margin: 0 25px 50px 25px;
+            transition: 0.5s ease;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .button:hover {
+            cursor: pointer;
+            box-shadow: 10px 10px 20px #181818,
+                -10px -10px 20px #323232;
+        }
+
+        .canvas {
+            background: rgba(255, 255, 255, 0.5);
+            box-shadow: 20px 20px 40px #181818,
+                -20px -20px 40px #323232;
+            backdrop-filter: blur(13px);
+            -webkit-backdrop-filter: blur(13px);
+            border-radius: 10px;
+            margin: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="max-width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <div>
+            <canvas id="scrambler" width="1403" height="2048" class="canvas"></canvas>
+        </div>
+        <div>
+            <div id="download" width="100" height="100" class="button">
+                Download
             </div>
-            <div>
-                <div id="download" width="100" height="100" class="button">
-                    Download
-                </div> 
-                <div  id="gridtoggle" width="100" height="100" class="button" onclick="toggleGrid()">
-                    Toggle Grid
-                </div>
+            <div id="gridtoggle" width="100" height="100" class="button" onclick="toggleGrid()">
+                Toggle Grid
+            </div>
+            <div id="loadprogress" width="100" height="100" class="button" onclick="loadProgress()">
+                Load Progress
+            </div>
+            <div id="clearprogress" width="100" height="100" class="button" onclick="clearProgress()">
+                Clear Progress
             </div>
         </div>
+    </div>
 
-        <script src="test.js"></script>
-    </body>
+    <script src="test.js"></script>
+</body>
+
 </html>
